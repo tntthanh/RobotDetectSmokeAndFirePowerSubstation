@@ -1,0 +1,21 @@
+<!--
+launch file to launch serial communication
+ -->
+
+<launch>
+  <!-- Arguments -->
+  <arg name="serial_port"     default="/dev/ttyAMA0"/>
+  <arg name="serial_port_gps"     default="/dev/ttyUSB1"/>
+  <!--Main-->
+  <node name="serial_tx"  pkg="mobile_mini" type="serial_tx.py" args = "$(arg serial_port)">
+  <param name="~port"         type="string" value="$(arg serial_port)"/>
+  </node>
+
+  <node name="serial_rx"  pkg="mobile_mini" type="serial_rx.py" args = "$(arg serial_port)">
+  <param name="~port"         type="string" value="$(arg serial_port)"/>
+  </node>
+
+  <node name="serial_rx_gps"  pkg="mobile_mini" type="serial_rx_gps.py" args = "$(arg serial_port_gps)">
+  <param name="~port"         type="string" value="$(arg serial_port_gps)"/>
+  </node>
+</launch>

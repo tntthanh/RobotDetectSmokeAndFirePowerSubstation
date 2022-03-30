@@ -1,0 +1,2 @@
+mobile_mini
+-DCATKIN_DEVEL_PREFIX=/home/ubuntu/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/ubuntu/catkin_ws/install -DCATKIN_WHITELIST_PACKAGES=mobile_mini -G Unix Makefiles
